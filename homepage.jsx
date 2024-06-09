@@ -1,8 +1,217 @@
-import { StyleSheet } from "react-native";
+import * as React from "react";
+import { Image } from "expo-image";
+import { StyleSheet, Text, View, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontSize, FontFamily, Border, Padding } from "../GlobalStyles";
-import { Homepage } from "./Homepage.1";
 
-export const styles = StyleSheet.create({
+const Homepage = () => {
+  const navigation = useNavigation();
+
+  return (
+    <View style={styles.homepage}>
+      <Pressable
+        style={[styles.news1, styles.newsLayout]}
+        onPress={() => navigation.navigate("Event1")}
+      >
+        <Image
+          style={[styles.maskGroupIcon, styles.newsLayout]}
+          contentFit="cover"
+          source={require("../assets/mask-group.png")}
+        />
+        <Text style={[styles.edisonsLightbulbRevolution, styles.time1FlexBox]}>
+          Edison's Lightbulb Revolution
+        </Text>
+        <Text style={styles.diveIntoThe}>
+          Dive into the electrifying story of Thomas Edison's invention of the
+          lightbulb, a groundbreaking innovation that illuminated the world and
+          revolutionized modern living.
+        </Text>
+        <Image
+          style={[styles.saveIcon, styles.saveIconLayout]}
+          contentFit="cover"
+          source={require("../assets/save-icon.png")}
+        />
+      </Pressable>
+      <View style={[styles.news2, styles.newsLayout]}>
+        <Image
+          style={[styles.maskGroupIcon, styles.newsLayout]}
+          contentFit="cover"
+          source={require("../assets/mask-group1.png")}
+        />
+        <Text style={[styles.edisonsLightbulbRevolution, styles.time1FlexBox]}>
+          Leonardo's Masterpiece Unveiled Lightbulb Revolution
+        </Text>
+        <Text style={styles.diveIntoThe}>
+          Explore the genius of Leonardo da Vinci as he unveils his masterpiece,
+          whether it's the enigmatic smile of the Mona Lisa or the intricate
+          machinery of his flying machines.
+        </Text>
+        <Image
+          style={[styles.saveIcon, styles.saveIconLayout]}
+          contentFit="cover"
+          source={require("../assets/save-icon.png")}
+        />
+      </View>
+      <View style={styles.trendingCollection}>
+        <Text style={styles.exploreTypo}>Explore</Text>
+        <View style={styles.frameParent}>
+          <View>
+            <Image
+              style={styles.news3Icon}
+              contentFit="cover"
+              source={require("../assets/news-3.png")}
+            />
+            <Image
+              style={[styles.news6Icon, styles.iconSpaceBlock]}
+              contentFit="cover"
+              source={require("../assets/news-6.png")}
+            />
+          </View>
+          <View style={styles.news6Parent}>
+            <Image
+              style={styles.news3Icon}
+              contentFit="cover"
+              source={require("../assets/news-61.png")}
+            />
+            <Image
+              style={[styles.news7Icon, styles.iconSpaceBlock]}
+              contentFit="cover"
+              source={require("../assets/news-7.png")}
+            />
+          </View>
+        </View>
+      </View>
+      <Text style={[styles.leonardoDaVinci, styles.cleopatraViiTypo]}>
+        Leonardo da Vinci
+      </Text>
+      <Text style={[styles.cleopatraVii, styles.cleopatraViiTypo]}>
+        Cleopatra VII
+      </Text>
+      <Text style={[styles.napoleonBonaparte, styles.cleopatraViiTypo]}>
+        Napoleon Bonaparte
+      </Text>
+      <Text style={[styles.historicalChat, styles.exploreTypo]}>
+        Historical Chat
+      </Text>
+      <View style={styles.category}>
+        <View style={styles.rectangleLayout}>
+          <View style={[styles.frameChild, styles.rectangleLayout]} />
+          <Text style={[styles.discovery, styles.cultureTypo]}>Discovery</Text>
+        </View>
+      </View>
+      <View style={[styles.rectangleGroup, styles.rectangleLayout]}>
+        <View style={[styles.frameChild, styles.rectangleLayout]} />
+        <Text style={[styles.culture, styles.cultureTypo]}>Culture</Text>
+      </View>
+      <Image
+        style={[styles.homepageChild, styles.homepageLayout]}
+        contentFit="cover"
+        source={require("../assets/ellipse-7.png")}
+      />
+      <Image
+        style={[styles.homepageItem, styles.homepageLayout]}
+        contentFit="cover"
+        source={require("../assets/ellipse-10.png")}
+      />
+      <Image
+        style={[styles.homepageInner, styles.homepageLayout]}
+        contentFit="cover"
+        source={require("../assets/ellipse-9.png")}
+      />
+      <View style={styles.category1}>
+        <Text style={[styles.trending, styles.trendingTypo]}>Trending</Text>
+        <Text style={[styles.explore1, styles.trendingTypo]}>Explore</Text>
+        <Text style={[styles.historicalChat1, styles.trendingTypo]}>
+          Historical Chat
+        </Text>
+        <View style={[styles.categoryChild, styles.saveIconLayout]} />
+      </View>
+      <View style={[styles.header, styles.headerLayout]}>
+        <Text style={[styles.pastport, styles.headerLayout]}>PastPort</Text>
+        <Image
+          style={[styles.akarIconssearch, styles.iconLayout]}
+          contentFit="cover"
+          source={require("../assets/akariconssearch.png")}
+        />
+        <Image
+          style={[styles.minotificationIcon, styles.iconLayout]}
+          contentFit="cover"
+          source={require("../assets/minotification.png")}
+        />
+      </View>
+      <View style={styles.statusBar}>
+        <View style={[styles.symbol, styles.timePosition]}>
+          <Image
+            style={[styles.batteryIcon, styles.timePosition]}
+            contentFit="cover"
+            source={require("../assets/battery.png")}
+          />
+          <Image
+            style={styles.wiFiIcon}
+            contentFit="cover"
+            source={require("../assets/wifi.png")}
+          />
+          <Image
+            style={styles.cellularIcon}
+            contentFit="cover"
+            source={require("../assets/cellular.png")}
+          />
+        </View>
+        <View style={[styles.time, styles.timePosition]}>
+          <Text style={[styles.time1, styles.timePosition]}>9:41</Text>
+        </View>
+      </View>
+      <View style={styles.navbar}>
+        <View style={styles.home}>
+          <Image
+            style={[styles.heroiconsSolidhome, styles.heroiconsSolidhomeLayout]}
+            contentFit="cover"
+            source={require("../assets/heroiconssolidhome.png")}
+          />
+          <Text style={styles.home1}>Home</Text>
+        </View>
+        <Pressable
+          style={[styles.trending1, styles.profileLayout]}
+          onPress={() => navigation.navigate("Explore")}
+        >
+          <Image
+            style={styles.materialSymbolsexploreIcon}
+            contentFit="cover"
+            source={require("../assets/materialsymbolsexplore.png")}
+          />
+          <Text style={[styles.explore2, styles.chatTypo]}>Explore</Text>
+        </Pressable>
+        <Pressable
+          style={styles.favorite}
+          onPress={() => navigation.navigate("CharacterChoose")}
+        >
+          <Image
+            style={[styles.bichatFillIcon, styles.iconLayout]}
+            contentFit="cover"
+            source={require("../assets/bichatfill.png")}
+          />
+          <Text style={[styles.chat, styles.chatTypo]}>Chat</Text>
+        </Pressable>
+        <Pressable
+          style={[styles.profile, styles.profileLayout]}
+          onPress={() => navigation.navigate("Profile")}
+        >
+          <Image
+            style={[
+              styles.iconamoonprofileFill,
+              styles.heroiconsSolidhomeLayout,
+            ]}
+            contentFit="cover"
+            source={require("../assets/iconamoonprofilefill.png")}
+          />
+          <Text style={[styles.explore2, styles.chatTypo]}>Profile</Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
   newsLayout: {
     height: 321,
     position: "absolute",
