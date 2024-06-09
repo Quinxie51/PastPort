@@ -1,0 +1,404 @@
+import * as React from "react";
+import { Text, StyleSheet, View, Pressable } from "react-native";
+import { Image } from "expo-image";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { Color, FontFamily, FontSize, Padding, Border } from "../GlobalStyles";
+
+const Notebook1 = () => {
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+  return (
+    <View style={styles.notebook}>
+      <View style={[styles.statusBarWrapper, styles.categoryChildPosition]}>
+        <View style={styles.statusBar}>
+          <Text style={styles.text}>3:29</Text>
+          <View style={styles.hugeIconcommunicationsolidParent}>
+            <Image
+              style={[styles.hugeIconcommunicationsolid, styles.hugeLayout]}
+              contentFit="cover"
+              source={require("../assets/hugeiconcommunicationsolidchatnotification.png")}
+            />
+            <Image
+              style={[styles.hugeIcondevicesolidbattery, styles.hugeLayout]}
+              contentFit="cover"
+              source={require("../assets/hugeicondevicesolidbatteryhorizontalcharging.png")}
+            />
+          </View>
+        </View>
+      </View>
+      <Text
+        style={styles.persistenceThomasEdisons}
+      >{`Persistence: Thomas Edison's relentless pursuit of success led him through over 1,000 unsuccessful attempts before finally inventing the practical incandescent lightbulb.
+Experimentation: Edison's approach involved systematic experimentation, resulting in more than 3,000 different materials tested for the lightbulb filament.
+Collaboration: He established the world's first industrial research laboratory, employing a team of over 50 scientists, engineers, and technicians to work on various projects, including the lightbulb.`}</Text>
+      <Text
+        style={[styles.keyTakeawaysFrom, styles.time1Clr]}
+      >{`Key Takeaways from Edison's Lightbulb
+ Revolution`}</Text>
+      <View style={[styles.category, styles.categoryLayout]}>
+        <View style={[styles.categoryChild, styles.categoryLayout]} />
+        <Text style={[styles.discovery, styles.time1Clr]}>Discovery</Text>
+      </View>
+      <Image
+        style={styles.maskGroupIcon}
+        contentFit="cover"
+        source={require("../assets/mask-group4.png")}
+      />
+      <View style={[styles.navbar, styles.navbarPosition]}>
+        <Pressable
+          style={styles.home}
+          onPress={() => navigation.navigate("Homepage")}
+        >
+          <Image
+            style={[styles.heroiconsSolidhome, styles.heroiconsSolidhomeLayout]}
+            contentFit="cover"
+            source={require("../assets/heroiconssolidhome1.png")}
+          />
+          <Text style={[styles.home1, styles.chatTypo]}>Home</Text>
+        </Pressable>
+        <View style={[styles.trending, styles.profileLayout]}>
+          <Image
+            style={styles.materialSymbolsexploreIcon}
+            contentFit="cover"
+            source={require("../assets/materialsymbolsexplore2.png")}
+          />
+          <Text style={[styles.explore, styles.exploreTypo]}>Explore</Text>
+        </View>
+        <Pressable
+          style={styles.favorite}
+          onPress={() => navigation.navigate("CharacterChoose")}
+        >
+          <Image
+            style={styles.bichatFillIcon}
+            contentFit="cover"
+            source={require("../assets/bichatfill.png")}
+          />
+          <Text style={[styles.chat, styles.chatTypo]}>Chat</Text>
+        </Pressable>
+        <View style={[styles.profile, styles.profileLayout]}>
+          <Image
+            style={[
+              styles.iconamoonprofileFill,
+              styles.heroiconsSolidhomeLayout,
+            ]}
+            contentFit="cover"
+            source={require("../assets/iconamoonprofilefill2.png")}
+          />
+          <Text style={[styles.profile1, styles.exploreTypo]}>Profile</Text>
+        </View>
+      </View>
+      <Image
+        style={[styles.backIcon, styles.iconLayout]}
+        contentFit="cover"
+        source={require("../assets/back2.png")}
+      />
+      <Text style={[styles.notebook1, styles.time1Clr]}>Notebook</Text>
+      <Image
+        style={[styles.saveIcon, styles.iconLayout]}
+        contentFit="cover"
+        source={require("../assets/save-icon.png")}
+      />
+      <View style={[styles.statusBar1, styles.navbarPosition]}>
+        <View style={styles.time}>
+          <Text style={[styles.time1, styles.time1Position]}>9:41</Text>
+        </View>
+        <View style={styles.symbol}>
+          <Image
+            style={[styles.batteryIcon, styles.time1Position]}
+            contentFit="cover"
+            source={require("../assets/battery1.png")}
+          />
+          <Image
+            style={styles.wiFiIcon}
+            contentFit="cover"
+            source={require("../assets/wifi2.png")}
+          />
+          <Image
+            style={styles.cellularIcon}
+            contentFit="cover"
+            source={require("../assets/cellular1.png")}
+          />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  categoryChildPosition: {
+    left: 0,
+    top: 0,
+  },
+  hugeLayout: {
+    width: 24,
+    height: 20,
+  },
+  time1Clr: {
+    color: Color.othersTextBG,
+    fontWeight: "600",
+    letterSpacing: 0,
+  },
+  categoryLayout: {
+    height: 17,
+    width: 77,
+    position: "absolute",
+  },
+  navbarPosition: {
+    width: 415,
+    left: "50%",
+    marginLeft: -207.5,
+    alignItems: "center",
+    flexDirection: "row",
+    position: "absolute",
+  },
+  heroiconsSolidhomeLayout: {
+    height: 34,
+    width: 34,
+    top: 0,
+    position: "absolute",
+    overflow: "hidden",
+  },
+  chatTypo: {
+    color: Color.colorDimgray_200,
+    fontFamily: FontFamily.poppinsMedium,
+    fontWeight: "500",
+    fontSize: FontSize.size_xs,
+    letterSpacing: 0,
+    textAlign: "center",
+    left: 0,
+    position: "absolute",
+  },
+  profileLayout: {
+    height: 52,
+    marginLeft: 53,
+  },
+  exploreTypo: {
+    top: 34,
+    fontFamily: FontFamily.poppinsMedium,
+    fontWeight: "500",
+    fontSize: FontSize.size_xs,
+    letterSpacing: 0,
+    textAlign: "center",
+    left: 0,
+    position: "absolute",
+  },
+  iconLayout: {
+    height: 35,
+    width: 35,
+    top: 75,
+    position: "absolute",
+  },
+  time1Position: {
+    top: "50%",
+    position: "absolute",
+  },
+  text: {
+    fontWeight: "700",
+    fontFamily: FontFamily.sFProRounded,
+    color: Color.blackAndWhiteBlack,
+    width: 40,
+    height: 20,
+    textAlign: "center",
+    fontSize: FontSize.size_base,
+  },
+  hugeIconcommunicationsolid: {
+    overflow: "hidden",
+  },
+  hugeIcondevicesolidbattery: {
+    marginLeft: 4,
+  },
+  hugeIconcommunicationsolidParent: {
+    flexDirection: "row",
+  },
+  statusBar: {
+    width: 375,
+    justifyContent: "space-between",
+    paddingHorizontal: Padding.p_5xl,
+    paddingVertical: Padding.p_sm,
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  statusBarWrapper: {
+    position: "absolute",
+  },
+  persistenceThomasEdisons: {
+    top: 443,
+    fontSize: FontSize.size_3xs,
+    fontFamily: FontFamily.poppinsRegular,
+    color: "#e2e2e2",
+    width: 328,
+    opacity: 0.7,
+    textAlign: "left",
+    left: 44,
+    position: "absolute",
+  },
+  keyTakeawaysFrom: {
+    top: 385,
+    fontSize: FontSize.size_sm,
+    fontFamily: FontFamily.poppinsSemiBold,
+    color: Color.othersTextBG,
+    fontWeight: "600",
+    letterSpacing: 0,
+    position: "absolute",
+    textAlign: "left",
+    left: 44,
+  },
+  categoryChild: {
+    borderRadius: Border.br_xl,
+    backgroundColor: Color.othersTextBG,
+    opacity: 0.1,
+    left: 0,
+    top: 0,
+  },
+  discovery: {
+    height: "67.06%",
+    width: "61.04%",
+    top: "11.76%",
+    left: "19.48%",
+    fontSize: FontSize.size_5xs,
+    fontFamily: FontFamily.poppinsSemiBold,
+    color: Color.othersTextBG,
+    fontWeight: "600",
+    letterSpacing: 0,
+    position: "absolute",
+    textAlign: "left",
+  },
+  category: {
+    top: 352,
+    left: 44,
+  },
+  maskGroupIcon: {
+    top: 130,
+    width: 319,
+    height: 194,
+    left: 44,
+    position: "absolute",
+  },
+  heroiconsSolidhome: {
+    left: 1,
+  },
+  home1: {
+    top: 35,
+  },
+  home: {
+    width: 36,
+    height: 53,
+  },
+  materialSymbolsexploreIcon: {
+    left: 6,
+    width: 31,
+    height: 31,
+    top: 0,
+    position: "absolute",
+    overflow: "hidden",
+  },
+  explore: {
+    color: Color.colorDimgray_100,
+  },
+  trending: {
+    width: 43,
+    marginLeft: 53,
+  },
+  bichatFillIcon: {
+    left: 4,
+    width: 26,
+    height: 26,
+    top: 0,
+    position: "absolute",
+    overflow: "hidden",
+  },
+  chat: {
+    top: 31,
+  },
+  favorite: {
+    width: 30,
+    height: 49,
+    marginLeft: 53,
+  },
+  iconamoonprofileFill: {
+    left: 2,
+  },
+  profile1: {
+    color: Color.yELLOW,
+  },
+  profile: {
+    width: 37,
+    marginLeft: 53,
+  },
+  navbar: {
+    bottom: 0,
+    backgroundColor: Color.colorGray_100,
+    justifyContent: "center",
+    paddingHorizontal: Padding.p_9xl,
+    paddingVertical: Padding.p_xl,
+  },
+  backIcon: {
+    left: 44,
+  },
+  notebook1: {
+    height: "2.82%",
+    width: "18.8%",
+    top: "9.17%",
+    left: "39.52%",
+    fontFamily: FontFamily.poppinsSemiBold,
+    color: Color.othersTextBG,
+    fontWeight: "600",
+    letterSpacing: 0,
+    position: "absolute",
+    textAlign: "center",
+    fontSize: FontSize.size_base,
+  },
+  saveIcon: {
+    left: 328,
+  },
+  time1: {
+    marginTop: -9,
+    left: 30,
+    fontSize: FontSize.size_mini,
+    fontFamily: FontFamily.sFProText,
+    color: Color.othersTextBG,
+    fontWeight: "600",
+    letterSpacing: 0,
+    top: "50%",
+    textAlign: "left",
+  },
+  time: {
+    width: 180,
+    height: 22,
+  },
+  batteryIcon: {
+    marginTop: -5.75,
+    right: 0,
+    width: 25,
+    height: 12,
+  },
+  wiFiIcon: {
+    width: 15,
+    height: 11,
+  },
+  cellularIcon: {
+    width: 17,
+    height: 11,
+  },
+  symbol: {
+    width: 67,
+    marginLeft: 143,
+    height: 12,
+  },
+  statusBar1: {
+    height: 48,
+    paddingHorizontal: 0,
+    paddingVertical: Padding.p_3xs,
+    top: 0,
+  },
+  notebook: {
+    backgroundColor: Color.colorBlack,
+    flex: 1,
+    width: "100%",
+    height: 805,
+    overflow: "hidden",
+  },
+});
+
+export default Notebook1;
